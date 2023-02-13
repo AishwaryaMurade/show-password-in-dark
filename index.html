@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Password Input Light | Nothing4us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<form onsubmit="return false">
+  <div class="form-item">
+    <label>Username</label>
+    <div class="input-wrapper">
+      <input type="text" id="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true"/>
+    </div>
+  </div>
+  <div class="form-item">
+    <label id="passwordlb">Password</label>
+    <div class="input-wrapper">
+      <div>
+        <input type="password" id="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true"/>
+        <button class="torchlight" id="torchlight">
+
+          <div class="torch"></div>
+          <div class="tfront"></div>
+        </button>
+
+      </div>
+      <div class="checkwrapper">
+        <input type="checkbox" onchange="lightclick(this)">Show Password
+      </div>
+      <div id="beam"></div>
+    </div>
+  </div>
+
+  <button id="submit">Sign in</button>
+</form>
+
+
+
+  <script  src="./script.js"></script>
+
+</body>
+</html>

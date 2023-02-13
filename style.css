@@ -1,0 +1,159 @@
+:root {
+  --bgColor: white;
+  --inputColor: #2b7abd;
+  --outlineColor: #2e4ba5;
+  --beamColor: #0cced9;
+  --spacer: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: #163d5e;
+}
+body.show-password {
+  --bgColor: black;
+  --inputColor: white;
+  --outlineColor: var(--beamColor);
+}
+
+form {
+  transform: translate3d(0, 0, 0);
+  padding: var(--spacer);
+}
+form > * + * {
+  margin-top: var(--spacer);
+}
+
+.form-item > * + * {
+  margin-top: 0.5rem;
+}
+
+label,
+input,
+button {
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: #42a8fe;
+}
+label:focus,
+input:focus,
+button:focus {
+  outline: 3px solid var(--outlineColor);
+  outline-offset: 2px;
+}
+label::-moz-focus-inner,
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: none;
+}
+label[id=password],
+input[id=password],
+button[id=password] {
+  color: black;
+}
+
+button {
+  border: none;
+}
+
+[id=submit] {
+  cursor: pointer;
+  margin: calc(var(--spacer) * 2) 0 0 2px;
+  padding: 0.75rem 1.25rem;
+  color: #fff;
+  background-color: #2b7abd;
+ border-radius: 10px;
+}
+[id=submit]:active {
+  transform: translateY(1px);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input {
+  padding: 0.75rem 4rem 0.75rem 0.75rem;
+  border-radius: 10px;
+  background-color: transparent;
+
+}
+input:focus {
+  outline-offset: 1px;
+}
+.show-password input:focus {
+  outline: none;
+  border-color: var(--beamColor);
+}
+
+
+[id=beam] {
+  position: absolute;
+  top: 35%;
+  right: -115px;
+  -webkit-clip-path: polygon(100% 50%, 100% 50%, 0 0, 0 100%);
+  clip-path: polygon(100% 50%, 100% 50%, 0 0, 0 100%);
+  width: 100vw;
+  height: 25vw;
+  z-index: 1;
+  mix-blend-mode: multiply;
+  transition: transform 200ms ease-out;
+  transform-origin: 100% 50%;
+  transform: translateY(-50%) rotate(var(--beamDegrees, 0));
+  pointer-events: none;
+}
+.show-password [id=beam] {
+  background: var(--beamColor);
+}
+
+
+.torch{
+  height: 0;
+  width: 80px;
+  background: #2e4ba5;
+}
+.tfront{
+  height: 40px;
+  width: 21px;
+  background: #fff;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  margin-left: -10px;
+  border-radius: 8px 0px 0px 8px;
+  background: #2e4ba5;
+  border: 1px solid #000;
+}
+.torchlight{
+  position: relative;
+  border-radius: 6px;
+  z-index: 2;
+  top: 10px;
+  display: none;
+  background: #2e4ba5;
+  border: 1px solid #000;
+  right: -115px;
+}
+.lablepassword{
+  color: #fff;
+    z-index: 4;
+    position: relative;
+}
+.showtorch{
+  display: inline-block;
+    position: absolute;
+}
+.checkwrapper{
+  color: #fff;
+    z-index: 3;
+    position: relative;
+    top: 8px;
+}
